@@ -1,6 +1,3 @@
-.container {
-  padding: 0 2rem;
-}
 
 .main {
   min-height: 100vh;
@@ -12,20 +9,16 @@
   align-items: center;
 }
 
-.footer {
-  display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
-  justify-content: center;
-  align-items: center;
-}
+
 
 .footer a {
+  position: absolute;
+  bottom: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-grow: 1;
+
 }
 
 .title a {
@@ -54,6 +47,7 @@
   margin: 4rem 0;
   line-height: 1.5;
   font-size: 1.5rem;
+  font-style: rgb(56, 49, 49);
 }
 
 .code {
@@ -71,6 +65,8 @@
   justify-content: center;
   flex-wrap: wrap;
   max-width: 800px;
+
+  
 }
 
 .card {
@@ -83,7 +79,9 @@
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
   max-width: 300px;
+  background-color: rgb(182, 176, 241);
 }
+
 
 .card:hover,
 .card:focus,
@@ -108,6 +106,154 @@
   margin-left: 0.5rem;
 }
 
+.bi-house-fill {
+  align-items: flex-start;
+}
+
+.task {
+  text-align: center;
+  font-size: x-large;
+  
+}
+
+.task {
+  text-align: center;
+  font-size: xx-large;
+  
+}
+
+
+.task2 {
+  text-align: left;
+  justify-content: left;
+  padding-left: 40px;
+}
+
+.tooltip {
+  text-transform: uppercase;
+  opacity: 0.6;
+  font-weight: 500;
+  letter-spacing: 0.10em;
+}
+
+.buttonSubmit {
+  align-items: center;
+}
+
+#btn {
+  text-align: center;
+}
+
+.container {
+  text-align: center;
+  background-color: rgb(209, 231, 231);
+}
+
+.feedback {
+  text-align: center;
+  font-size: 40px;
+  text-decoration: overline;
+}
+
+.feedbacktext{
+  font-size: 30px;
+  text-align: center;
+}
+
+.feedbacktext2{
+  font-size: 20px;
+  text-align: center;
+}
+
+.textbox {
+  background-color: rgb(248, 222, 246); 
+  color: #020202; 
+  border-radius: 4px; 
+  font-size: 16px; 
+  padding: 20px; 
+  margin: 5px;
+}
+
+.textbox2 {
+  background-color: rgb(234, 225, 246); 
+  color: #020202; 
+  border-radius: 4px; 
+  font-size: 16px; 
+  padding: 20px; 
+  margin: 5px;
+}
+.use {
+  font-size: 40px;
+  font-stretch: expanded;
+  text-decoration: overline;
+}
+
+
+
+
+.taskpage {
+  font-size: 40px;
+  font-stretch: expanded;
+  text-decoration: overline;
+}
+
+.information {
+  font-size: 40px;
+  font-stretch: expanded;
+  text-decoration: overline;
+}
+
+.contactlist {
+  text-align: left;
+  justify-content: left;
+  padding-left: 315px;
+  padding-right: 200px;
+}
+
+.thanks {
+  text-align: center;
+}
+
+.taskdiv {
+  padding-right: 150px;
+  padding-left: 150px;
+}
+
+.infotext {
+  text-align: left;
+  justify-content: left;
+  padding-left: 150px;
+  padding-right: 150px;
+}
+
+
+.headerText {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.05em;
+  margin-top: 50px;
+  text-align: left;
+  opacity: 0.9;
+  color: green;
+}
+
+.headerContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.more {
+
+ /* Center and scale the image nicely */
+ display: block;
+ margin-left: auto;
+ margin-right: auto;
+}
+
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
@@ -127,3 +273,12 @@
     filter: invert(1);
   }
 }
+
+
+
+
+
+
+
+
+
