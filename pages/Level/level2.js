@@ -1,11 +1,57 @@
 import { useState } from "react";
+import axios from "axios";
+
 
 export default function Home() {
+  const [score, setScore] = useState(0);
+  const [result, setResult] = useState("");
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+
+    // get the user's answers
+    const formData = new FormData(event.target);
+    const answers = {};
+    for (let [name, value] of formData.entries()) {
+      answers[name] = value;
+    }
+
+    // calculate the score
+    let newScore = 0;
+    if (answers.q1 === "c") {
+      newScore += 1;
+    }
+    if (answers.q2 === "d") {
+      newScore += 1;
+    }
+    if (answers.q3 === "a") {
+      newScore += 1;
+    }
+    if (answers.q4 === "c") {
+      newScore += 1;
+    }
+    if (answers.q5 === "c") {
+      newScore += 1;
+    }
+    if (answers.q6 === "a") {
+      newScore += 1;
+    }
+
+
+    //get userid here, how to set?
+    let userid = 3;
+    let data = {newScore : newScore, userid : userid, level: 2};
+    // store the score in the database
+    axios.post("/api/levels/score", data).then(() => {
+      setScore(newScore);
+    });
+  };
+
 
   return (
     <div>
       <h1>Level 2</h1>
-      <form>
+      <form onSubmit={handleFormSubmit}>
         <h2>Question 1</h2>
         <p>What is the arithmetic average of the numbers 17, 19 and 24??</p>
         <label>
@@ -55,22 +101,22 @@ export default function Home() {
         <h2>Question 3</h2>
         <p>What is the median of the numbers 6, 8 and 20?</p>        
         <label>
-          <input type="radio" name="q2" value="a" />
+          <input type="radio" name="q3" value="a" />
           a. 8
         </label>
         <br />
         <label>
-          <input type="radio" name="q2" value="b" />
+          <input type="radio" name="q3" value="b" />
           b. 9
         </label>
         <br />
         <label>
-          <input type="radio" name="q2" value="c" />
+          <input type="radio" name="q3" value="c" />
           c. 10
         </label>
         <br />
         <label>
-          <input type="radio" name="q2" value="d" />
+          <input type="radio" name="q3" value="d" />
           d. 17
         </label>
         <br />
@@ -78,22 +124,22 @@ export default function Home() {
         <h2>Question 4</h2>
         <p>What is the median of the numbers 10, 11, 13 and 14?</p>
         <label>
-          <input type="radio" name="q2" value="a" />
+          <input type="radio" name="q4" value="a" />
           a. 10
         </label>
         <br />
         <label>
-          <input type="radio" name="q2" value="b" />
+          <input type="radio" name="q4" value="b" />
           b. 11
         </label>
         <br />
         <label>
-          <input type="radio" name="q2" value="c" />
+          <input type="radio" name="q4" value="c" />
           c. 12
         </label>
         <br />
         <label>
-          <input type="radio" name="q2" value="d" />
+          <input type="radio" name="q4" value="d" />
           d. 13
         </label>
         <br />
@@ -101,49 +147,58 @@ export default function Home() {
         <h2>Question 5</h2>
         <p>The actual length of a rope is 10 meters. If a measuring tape measures its length as 9 meters, what is the relative error in the measurement?</p>
         <label>
-          <input type="radio" name="q2" value="a" />
+          <input type="radio" name="q5" value="a" />
           a. 1%
         </label>
         <br />
         <label>
-          <input type="radio" name="q2" value="b" />
+          <input type="radio" name="q5" value="b" />
           b. 9%
         </label>
         <br />
         <label>
-          <input type="radio" name="q2" value="c" />
+          <input type="radio" name="q5" value="c" />
           c. 10%
         </label>
         <br />
         <label>
-          <input type="radio" name="q2" value="d" />
+          <input type="radio" name="q5" value="d" />
           d. 15%
         </label>
         <br />
         <h2>Question 6</h2>
         <p>A bakery sells cupcakes in boxes of 12 and 24. The price for a box of 12 cupcakes is $10, and the price for a box of 24 cupcakes is $19. If a customer buys 1 box of 12 cupcakes and 2 boxes of 24 cupcakes, what is the weighted average price per cupcake?</p>
         <label>
-          <input type="radio" name="q2" value="a" />
+          <input type="radio" name="q6" value="a" />
           a. $0.8
         </label>
         <br />
         <label>
-          <input type="radio" name="q2" value="b" />
+          <input type="radio" name="q6" value="b" />
           b. $0.9
         </label>
         <br />
         <label>
-          <input type="radio" name="q2" value="c" />
+          <input type="radio" name="q6" value="c" />
           c. $1
         </label>
         <br />
         <label>
-          <input type="radio" name="q2" value="d" />
+          <input type="radio" name="q6" value="d" />
           d. $1.2
         </label>
         <br />
         <br></br>
+     
+       
+
         <input type="submit" value="Submit" />
+        <p> {result} </p>
+        <br></br>
+
+        <a href="/Level/level3"> Next Level!</a>
+
+
       </form>
       
 
