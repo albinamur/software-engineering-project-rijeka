@@ -17,12 +17,9 @@ function Contact(){
             <p>Ahmed Tauqeer</p>
             <a href= "mailto:tauqeer.ahmed@studenti.unime.it">tauqeer.ahmed@studenti.unime.it</a>
             <p>Tomasz Ludyga </p>
+            <a href= "mailto:tomasz.ludyga@mailbox.tu-dresden.de">tomasz.ludyga@mailbox.tu-dresden.de</a>
     </ul>
   </container>
-
-  
-
-  
         </>
     )
 }
