@@ -5,11 +5,7 @@ import React, { useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
-function handleClick() {
-//   AsyncStorage.getItem("email").then(email => {
-//     window.location.href = "/register";
-// });
-//   console.log('Button clicked! Email: ',email);
+function handleStart() {
   window.location.href = "/register";
 }
 
@@ -46,7 +42,7 @@ export default function Quiz() {
                     {/* <h3><a href="/register">Register here</a></h3> */}
                     {/* <h3><a href="/login">Login</a></h3>
                     <h3><a href="Level/level1"> <button id='Playbutton'>Play!</button></a></h3> */}
-                    <button onClick={handleClick}>Start</button>
+                    <button onClick={handleStart}>Start</button>
                     <h3><a href="/highscores">Your High Scores</a></h3>
                 </div>
             </div>

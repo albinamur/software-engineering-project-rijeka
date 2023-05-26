@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-
+const NUMBER_OF_QUESTIONS = 6;
 
 export default function Quiz() {
   const [score, setScore] = useState(0);
@@ -16,6 +16,12 @@ export default function Quiz() {
     const answers = {};
     for (let [name, value] of formData.entries()) {
       answers[name] = value;
+    }
+
+    //check whetther all questions are answered
+    if (Array.from(formData.entries()).length != NUMBER_OF_QUESTIONS) {
+      alert("Please answer all questions before submitting.");
+      return;
     }
 
     // calculate the score
@@ -52,6 +58,8 @@ export default function Quiz() {
     axios.post("/api/levels/score", data).then(() => {
       setScore(newScore);
     });
+
+    window.location.href = "/Level/level2";
   };
 
     // Find the element using JavaScript
@@ -213,7 +221,7 @@ export default function Quiz() {
         <p> {result} </p>
         <br></br>
 
-        <a href="/Level/level2"> Next Level!</a>
+        {/* <a href="/Level/level2"> Next Level!</a> */}
 
 
       </form>

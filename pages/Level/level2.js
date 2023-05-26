@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
+const NUMBER_OF_QUESTIONS = 6;
 
 export default function Home() {
   const [score, setScore] = useState(0);
@@ -14,6 +15,12 @@ export default function Home() {
     const answers = {};
     for (let [name, value] of formData.entries()) {
       answers[name] = value;
+    }
+
+    //check whetther all questions are answered
+    if (Array.from(formData.entries()).length != NUMBER_OF_QUESTIONS) {
+      alert("Please answer all questions before submitting.");
+      return;
     }
 
     // calculate the score
@@ -45,6 +52,8 @@ export default function Home() {
     axios.post("/api/levels/score", data).then(() => {
       setScore(newScore);
     });
+
+    window.location.href = "/Level/level3";
   };
 
 
@@ -196,7 +205,7 @@ export default function Home() {
         <p> {result} </p>
         <br></br>
 
-        <a href="/Level/level3"> Next Level!</a>
+        {/* <a href="/Level/level3"> Next Level!</a> */}
 
 
       </form>
