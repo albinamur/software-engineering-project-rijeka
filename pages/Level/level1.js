@@ -1,11 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+
 
 export default function Quiz() {
   const [score, setScore] = useState(0);
   const [result, setResult] = useState("");
-
-
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
@@ -53,9 +54,20 @@ export default function Quiz() {
     });
   };
 
+    // Find the element using JavaScript
+    useEffect(() => {
+
+      AsyncStorage.getItem("fullName").then(fullName => {
+        const element = document.getElementById("title");
+        if (element) {
+          element.textContent = "Level 1 "+fullName;
+        }
+      });  
+    }, []);
+  
   return (
     <div>
-      <h1>Level 1</h1>
+      <h1 id="title">Level 1</h1>
       <form onSubmit={handleFormSubmit}>
         <h2>Question 1</h2>
         <p>What is the arithmetic average of the numbers 2 and 8?</p>
