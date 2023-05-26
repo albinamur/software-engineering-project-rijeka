@@ -1,7 +1,16 @@
 import styles from '../styles/Home.module.css'
 import axios from 'axios';
 import { useRouter } from "next/router";
+import React, { useState } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
+
+function handleClick() {
+  AsyncStorage.getItem("KEY").then(asyncStorageRes => {
+    console.log(asyncStorageRes)
+});
+  console.log('Button clicked!');
+}
 
 
 export async function getServerSideProps(context) {
@@ -25,19 +34,6 @@ export async function getServerSideProps(context) {
 
 export default function Quiz() {
 
-//const button = document.getElementById('Playbutton');
-
-
-//button.addEventListener('click', () => {
-  //console.log('Button clicked!');
-  //axios.post('/setattempts', {
-    //try: 1
- // })
-  //.then(function (response) {
-   // console.log(response);
-  //})
-
-//});
     return (
         <>
         <container className={styles.container}>
@@ -49,7 +45,7 @@ export default function Quiz() {
                     <h3><a href="/register">Register here</a></h3>
                     <h3><a href="/login">Login</a></h3>
                     <h3><a href="Level/level1"> <button id='Playbutton'>Play!</button></a></h3>
-                  
+                    <button onClick={handleClick}>Custom Button</button> {/* Add this button */}
                     <h3><a href="/highscores">Your High Scores</a></h3>
                 </div>
             </div>

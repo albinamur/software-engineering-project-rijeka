@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import mysql from 'mysql2';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 
 const Register = () => {
   const [email, setEmail] = useState('');
@@ -26,25 +28,7 @@ const Register = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const connection = mysql.createConnection({
-      host: '127.0.0.1',
-      user: 'root',
-      password: 'hello',
-      database: 'software_eng_rij'
-    });
-
-    const sql = `INSERT INTO users (email, password, university, study_program) VALUES ('${email}', '${password}', '${university}', '${studyProgram}')`;
-
-    connection.query(sql, (error, results) => {
-      if (error) {
-        console.error(error);
-        return;
-      }
-
-      console.log('User registered successfully');
-    });
-
-    connection.end();
+    AsyncStorage.setItem("KEY", email);
   }
 
   return (
