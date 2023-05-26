@@ -6,7 +6,6 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 const Register = () => {
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const [university, setUniversity] = useState('');
   const [studyProgram, setStudyProgram] = useState('');
 
@@ -16,10 +15,6 @@ const Register = () => {
   
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
-  }
-
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
   }
 
   const handleUniversityChange = (event) => {
@@ -35,7 +30,6 @@ const Register = () => {
 
     AsyncStorage.setItem("fullName", fullName);
     AsyncStorage.setItem("email", email);
-    AsyncStorage.setItem("password", password);
     AsyncStorage.setItem("university", university);
     AsyncStorage.setItem("studyProgram", studyProgram);
 
@@ -51,9 +45,6 @@ const Register = () => {
         <br />
         <label htmlFor="email">Email:</label>
         <input type="email" id="email" name="email" value={email} onChange={handleEmailChange} required />
-        <br />
-        <label htmlFor="password">Password:</label>
-        <input type="password" id="password" name="password" value={password} onChange={handlePasswordChange} required />
         <br />
         <label htmlFor="university">University:</label>
         <input type="text" id="university" name="university" value={university} onChange={handleUniversityChange} required />
