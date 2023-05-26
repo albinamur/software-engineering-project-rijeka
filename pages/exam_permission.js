@@ -35,6 +35,7 @@ export default function Information() {
          Thank you for taking part in the statistic quiz.
         </p>
         <p className={styles.infotext}> {displaytext}</p>
+        <h3><a href="./">Go back to main menu</a></h3>
         </container>
         </>
         )

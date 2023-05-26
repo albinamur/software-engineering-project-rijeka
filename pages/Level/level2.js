@@ -205,9 +205,6 @@ export default function Home() {
         <p> {result} </p>
         <br></br>
 
-        {/* <a href="/Level/level3"> Next Level!</a> */}
-
-
       </form>
       
 

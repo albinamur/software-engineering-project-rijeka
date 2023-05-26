@@ -221,9 +221,6 @@ export default function Quiz() {
         <p> {result} </p>
         <br></br>
 
-        {/* <a href="/Level/level2"> Next Level!</a> */}
-
-
       </form>
       
 

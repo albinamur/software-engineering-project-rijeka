@@ -205,9 +205,6 @@ export default function Home() {
         <p> {result} </p>
         <br></br>
 
-        {/* <a href="../exam_permission"> End Exam! </a> */}
-
-
       </form>
       
 
