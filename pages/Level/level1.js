@@ -26,7 +26,7 @@ export default function Quiz() {
 
     // calculate the score
     let newScore = 0;
-    if (answers.q1 === "b") {
+    if (answers.q1 === "a") {
       newScore += 1;
     }
     if (answers.q2 === "c") {
@@ -48,9 +48,10 @@ export default function Quiz() {
 
     setResult["You reached " + score + " points."]
     
+    //write score into global variable
+    console.log("score "+newScore);
+    AsyncStorage.setItem("lvl1score", newScore);  
     
-    
-
     //get userid here, how to set?
     let userid = 3;
     let data = {newScore : newScore, userid : userid, level: 1};

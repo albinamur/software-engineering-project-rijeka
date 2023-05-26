@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const NUMBER_OF_QUESTIONS = 6;
 
@@ -44,6 +45,9 @@ export default function Home() {
       newScore += 1;
     }
 
+    //write score into global variable
+    console.log("score "+newScore);
+    AsyncStorage.setItem("lvl2score", newScore);      
 
     //get userid here, how to set?
     let userid = 3;
