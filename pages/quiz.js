@@ -7,6 +7,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 function handleStart() {
   window.location.href = "/register";
+  AsyncStorage.clear()
 }
 
 

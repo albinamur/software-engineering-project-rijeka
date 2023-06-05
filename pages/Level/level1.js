@@ -63,9 +63,8 @@ export default function Quiz() {
     window.location.href = "/Level/level2";
   };
 
-    // Find the element using JavaScript
+    // generate title with user name
     useEffect(() => {
-
       AsyncStorage.getItem("fullName").then(fullName => {
         const element = document.getElementById("title");
         if (element) {

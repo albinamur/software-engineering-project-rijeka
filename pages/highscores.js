@@ -32,11 +32,35 @@ export default function Information() {
     } )
   });
 
+  //generate user data display
+  useEffect(() => {
+    AsyncStorage.getItem("fullName").then(fullName => {
+      const element = document.getElementById("name");
+      element.textContent = "Name: " + fullName;
+    });  
+    AsyncStorage.getItem("email").then(email => {
+      const element = document.getElementById("email");
+      element.textContent = "Email: " + email;
+    });  
+    AsyncStorage.getItem("university").then(university => {
+      const element = document.getElementById("uni");
+      element.textContent = "University: " + university;
+    });  
+    AsyncStorage.getItem("studyProgram").then(studyProgram => {
+      const element = document.getElementById("study");
+      element.textContent = "Study Program: " + studyProgram;
+    });  
+  }, []);
+
+  function handlePDF() {
+    alert("Feature not supported yet.");
+  }
+
     return (
         <>
         <container className={styles.container}>
         <p className={styles.information}>
-          Your High Scores  
+          Your Scores  
         </p>
         <p className={styles.infotext}> 
         These are your results for level 1: {l1}
@@ -47,6 +71,11 @@ export default function Information() {
         <p className={styles.infotext}> 
         These are your results for level 3: {l3}
         </p>
+        <p id="name"></p>
+        <p id="email"></p>
+        <p id="uni"></p>
+        <p id="study"></p>
+        <center><button onClick={handlePDF}>Generate PDF</button></center>
         </container>
         </>
         )
