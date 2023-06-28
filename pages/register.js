@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import mysql from 'mysql2';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import styles from '../styles/Home.module.css'
 
 
 const Register = () => {
@@ -37,23 +38,28 @@ const Register = () => {
   }
 
   return (
-    <div>
+    <div className={styles.container}>
+
       <h1>Registration Form</h1>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="fullName">Full Name:</label>
+        <label htmlFor="fullName">Full Name:   </label>
         <input type="text" id="fullName" name="fullName" value={fullName} onChange={handleFullNameChange} required />
         <br />
-        <label htmlFor="email">Email:</label>
+        <br />
+        <label htmlFor="email">Email:  </label>
         <input type="email" id="email" name="email" value={email} onChange={handleEmailChange} required />
         <br />
-        <label htmlFor="university">University:</label>
+        <br />
+        <label htmlFor="university">University:  </label>
         <input type="text" id="university" name="university" value={university} onChange={handleUniversityChange} required />
         <br />
-        <label htmlFor="studyProgram">Study Program:</label>
+        <br />
+        <label htmlFor="studyProgram">Study Program:  </label>
         <input type="text" id="studyProgram" name="studyProgram" value={studyProgram} onChange={handleStudyProgramChange} required />
         <br />
+        <br />
         <br /><br />
-        <button type="submit">Register</button>
+        <button className={styles.button} type="submit">Register</button>
       </form>
     </div>
   );

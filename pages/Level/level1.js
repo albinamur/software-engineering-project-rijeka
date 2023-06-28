@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import styles from '../../styles/Home.module.css'
 
 const NUMBER_OF_QUESTIONS = 6;
 
@@ -74,7 +75,7 @@ export default function Quiz() {
     }, []);
   
   return (
-    <div>
+    <div className={styles.container}>
       <h1 id="title">Level 1</h1>
       <form onSubmit={handleFormSubmit}>
         <h2>Question 1</h2>
@@ -217,7 +218,7 @@ export default function Quiz() {
 
        
 
-        <input type="submit" value="Submit" />
+        <input className={styles.button} type="submit" value="Submit" />
         <p> {result} </p>
         <br></br>
 

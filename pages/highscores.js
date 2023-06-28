@@ -58,7 +58,7 @@ export default function Information() {
 
     return (
         <>
-        <container className={styles.container}>
+        <div className={styles.container}>
         <p className={styles.information}>
           Your Scores  
         </p>
@@ -76,7 +76,7 @@ export default function Information() {
         <p id="uni"></p>
         <p id="study"></p>
         <center><button onClick={handlePDF}>Generate PDF</button></center>
-        </container>
+        </div>
         </>
         )
     }

@@ -5,6 +5,8 @@ import React, { useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
+
+
 function handleStart() {
   window.location.href = "/register";
   AsyncStorage.clear()
@@ -34,20 +36,23 @@ export default function Quiz() {
 
     return (
         <>
+        <div className={styles.container}></div>
         <container className={styles.container}>
             <div>
                 <div>
-                    <h1>
+                <h1 className={styles.title}>
                         Quiz!
                     </h1>
                     {/* <h3><a href="/register">Register here</a></h3> */}
                     {/* <h3><a href="/login">Login</a></h3>
                     <h3><a href="Level/level1"> <button id='Playbutton'>Play!</button></a></h3> */}
-                    <button onClick={handleStart}>Start</button>
+                    <br></br>
+                    <button className={styles.button} onClick={handleStart}>Start</button>
                     <h3><a href="/highscores">Your scores</a></h3>
                 </div>
             </div>
         </container>
+        <div></div>
 
         </>
     )

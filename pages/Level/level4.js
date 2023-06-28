@@ -1,9 +1,11 @@
 import { useState } from "react";
+import styles from '../../styles/Home.module.css'
+
 
 export default function Home() {
 
   return (
-    <div>
+    <div className={styles.container}>
       <h1>Level 4</h1>
       <form>
         <h2>Question 1</h2>
@@ -143,7 +145,7 @@ export default function Home() {
         </label>
         <br />
         <br></br>
-        <input type="submit" value="Submit" />
+        <input className={styles.button} type="submit" value="Submit" />
       </form>
       
 
